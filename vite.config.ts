@@ -2,6 +2,7 @@ import { defineConfig, type PluginOption } from 'vite'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { globSync } from 'glob'
+import { renameSync, existsSync, rmSync, mkdirSync } from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -34,9 +35,30 @@ function pagesRewrite(): PluginOption {
   }
 }
 
+// Move dist/pages/* to dist/* after build
+function flattenPagesOutput(): PluginOption {
+  return {
+    name: 'flatten-pages-output',
+    closeBundle() {
+      const pagesDir = resolve(__dirname, 'dist/pages')
+      if (existsSync(pagesDir)) {
+        for (const entry of globSync('dist/pages/**/*', { nodir: true })) {
+          const dest = entry.replace('dist/pages/', 'dist/')
+          const destParent = dirname(resolve(__dirname, dest))
+          if (!existsSync(destParent)) {
+            mkdirSync(destParent, { recursive: true })
+          }
+          renameSync(resolve(__dirname, entry), resolve(__dirname, dest))
+        }
+        rmSync(pagesDir, { recursive: true })
+      }
+    },
+  }
+}
+
 export default defineConfig({
   base: '/',
-  plugins: [pagesRewrite(), tailwindcss()],
+  plugins: [pagesRewrite(), tailwindcss(), flattenPagesOutput()],
   root: '.',
   publicDir: 'public',
   build: {
