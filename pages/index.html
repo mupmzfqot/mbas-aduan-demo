@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log Masuk — Sistem Pengurusan Aduan Awam MBAS</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" crossorigin src="/assets/main-BsrKT7yo.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-nxUoJqtI.css">
+  </head>
+  <body class="min-h-screen bg-mbas-light-bg dark:bg-mbas-dark-bg">
+    <!-- Dark mode toggle (floating) -->
+    <button
+      id="dark-mode-toggle"
+      class="fixed right-4 top-4 z-50 rounded-lg bg-white p-2 shadow-md transition-colors hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700"
+      title="Tukar mod gelap/cerah"
+    >
+      <i data-lucide="sun" class="hidden h-5 w-5 text-yellow-500 dark:block"></i>
+      <i data-lucide="moon" class="block h-5 w-5 text-gray-600 dark:hidden"></i>
+    </button>
+
+    <div class="flex min-h-screen items-center justify-center px-4 py-12">
+      <div class="w-full max-w-md">
+        <!-- Logo & Title -->
+        <div class="mb-8 text-center">
+          <img src="/assets/logo-_m2QPa3k.png" alt="Logo MBAS" class="mx-auto mb-4 h-24 w-24 object-contain" />
+          <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Sistem Pengurusan Aduan Awam
+          </h1>
+          <p class="mt-1 text-sm text-mbas-text-secondary">
+            Majlis Bandaraya Alor Setar
+          </p>
+        </div>
+
+        <!-- Login Card -->
+        <div class="card">
+          <h2 class="mb-6 text-lg font-semibold text-gray-900 dark:text-white">Log Masuk</h2>
+
+          <form id="login-form" class="space-y-4">
+            <!-- Email / Phone -->
+            <div>
+              <label for="login-id" class="form-label">Emel atau No. Telefon</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                  <i data-lucide="user" class="h-4 w-4"></i>
+                </span>
+                <input
+                  type="text"
+                  id="login-id"
+                  class="form-input pl-10"
+                  placeholder="nama@emel.com atau 01X-XXXXXXX"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div>
+              <label for="login-password" class="form-label">Kata Laluan</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                  <i data-lucide="lock" class="h-4 w-4"></i>
+                </span>
+                <input
+                  type="password"
+                  id="login-password"
+                  class="form-input pl-10"
+                  placeholder="Masukkan kata laluan"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Remember + Forgot -->
+            <div class="flex items-center justify-between">
+              <label class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-mbas-cyan focus:ring-mbas-cyan" />
+                Ingat saya
+              </label>
+              <a href="#" class="text-sm font-medium text-mbas-cyan hover:underline">Lupa kata laluan?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn-primary w-full justify-center py-2.5">
+              <i data-lucide="log-in" class="h-4 w-4"></i>
+              Log Masuk
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="my-6 flex items-center gap-4">
+            <div class="h-px flex-1 bg-gray-200 dark:bg-gray-700"></div>
+            <span class="text-xs text-mbas-text-secondary">ATAU</span>
+            <div class="h-px flex-1 bg-gray-200 dark:bg-gray-700"></div>
+          </div>
+
+          <!-- Role Quick Access (Demo) -->
+          <div class="space-y-2">
+            <p class="mb-3 text-center text-xs font-medium uppercase text-mbas-text-secondary">
+              Akses Demo Pantas
+            </p>
+            <a href="/awam/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+              <i data-lucide="user" class="h-4 w-4 text-mbas-cyan"></i>
+              Pengguna Awam
+            </a>
+            <a href="/admin/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+              <i data-lucide="shield" class="h-4 w-4 text-indigo-500"></i>
+              Admin Aduan
+            </a>
+            <a href="/penyelia/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+              <i data-lucide="users" class="h-4 w-4 text-amber-500"></i>
+              Penyelia Bahagian
+            </a>
+            <a href="/teknikal/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+              <i data-lucide="wrench" class="h-4 w-4 text-green-500"></i>
+              Teknikal Bahagian
+            </a>
+            <a href="/pentadbir/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+              <i data-lucide="settings" class="h-4 w-4 text-red-500"></i>
+              Pentadbir Sistem
+            </a>
+          </div>
+
+          <!-- Register Link -->
+          <p class="mt-6 text-center text-sm text-mbas-text-secondary">
+            Belum mempunyai akaun?
+            <a href="/daftar.html" class="font-medium text-mbas-cyan hover:underline">Daftar sekarang</a>
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <p class="mt-6 text-center text-xs text-mbas-text-secondary">
+          &copy; 2026 Majlis Bandaraya Alor Setar. Hak cipta terpelihara.
+        </p>
+      </div>
+    </div>
+
+    <script>lucide.createIcons()</script>
+  </body>
+</html>

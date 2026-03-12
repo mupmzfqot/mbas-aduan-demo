@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran — Sistem Pengurusan Aduan Awam MBAS</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" crossorigin src="/assets/main-BsrKT7yo.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-nxUoJqtI.css">
+  </head>
+  <body class="min-h-screen bg-mbas-light-bg dark:bg-mbas-dark-bg">
+    <!-- Dark mode toggle -->
+    <button
+      id="dark-mode-toggle"
+      class="fixed right-4 top-4 z-50 rounded-lg bg-white p-2 shadow-md transition-colors hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700"
+      title="Tukar mod gelap/cerah"
+    >
+      <i data-lucide="sun" class="hidden h-5 w-5 text-yellow-500 dark:block"></i>
+      <i data-lucide="moon" class="block h-5 w-5 text-gray-600 dark:hidden"></i>
+    </button>
+
+    <div class="flex min-h-screen items-center justify-center px-4 py-12">
+      <div class="w-full max-w-lg">
+        <!-- Logo & Title -->
+        <div class="mb-8 text-center">
+          <img src="/assets/logo-_m2QPa3k.png" alt="Logo MBAS" class="mx-auto mb-4 h-24 w-24 object-contain" />
+          <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Pendaftaran Akaun</h1>
+          <p class="mt-1 text-sm text-mbas-text-secondary">
+            Sistem Pengurusan Aduan Awam — Majlis Bandaraya Alor Setar
+          </p>
+        </div>
+
+        <!-- Registration Card -->
+        <div class="card">
+          <!-- Step Indicator -->
+          <div class="mb-6 flex items-center justify-center gap-2">
+            <div id="step-indicator-1" class="flex items-center gap-1">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-mbas-cyan text-xs font-bold text-white">1</span>
+              <span class="text-xs font-medium text-mbas-cyan">Maklumat</span>
+            </div>
+            <div class="h-px w-8 bg-gray-300 dark:bg-gray-600"></div>
+            <div id="step-indicator-2" class="flex items-center gap-1">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-gray-500 dark:bg-gray-600 dark:text-gray-400">2</span>
+              <span class="text-xs text-mbas-text-secondary">Pengesahan OTP</span>
+            </div>
+            <div class="h-px w-8 bg-gray-300 dark:bg-gray-600"></div>
+            <div id="step-indicator-3" class="flex items-center gap-1">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-gray-500 dark:bg-gray-600 dark:text-gray-400">3</span>
+              <span class="text-xs text-mbas-text-secondary">PDPA</span>
+            </div>
+          </div>
+
+          <!-- Step 1: Registration Form -->
+          <div id="step-1">
+            <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Maklumat Pendaftaran</h2>
+            <form class="space-y-4">
+              <!-- Full Name -->
+              <div>
+                <label for="reg-name" class="form-label">Nama Penuh <span class="text-mbas-danger">*</span></label>
+                <input type="text" id="reg-name" class="form-input" placeholder="Nama penuh seperti dalam kad pengenalan" required />
+              </div>
+
+              <!-- IC Number -->
+              <div>
+                <label for="reg-ic" class="form-label">No. Kad Pengenalan <span class="text-mbas-danger">*</span></label>
+                <input type="text" id="reg-ic" class="form-input" placeholder="XXXXXX-XX-XXXX" required />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="reg-email" class="form-label">Emel <span class="text-mbas-danger">*</span></label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <i data-lucide="mail" class="h-4 w-4"></i>
+                  </span>
+                  <input type="email" id="reg-email" class="form-input pl-10" placeholder="nama@emel.com" required />
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="reg-phone" class="form-label">No. Telefon <span class="text-mbas-danger">*</span></label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <i data-lucide="phone" class="h-4 w-4"></i>
+                  </span>
+                  <input type="tel" id="reg-phone" class="form-input pl-10" placeholder="01X-XXXXXXX" required />
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div>
+                <label for="reg-address" class="form-label">Alamat</label>
+                <textarea id="reg-address" rows="2" class="form-input" placeholder="Alamat penuh"></textarea>
+              </div>
+
+              <!-- Password -->
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="reg-password" class="form-label">Kata Laluan <span class="text-mbas-danger">*</span></label>
+                  <input type="password" id="reg-password" class="form-input" placeholder="Min. 8 aksara" required />
+                </div>
+                <div>
+                  <label for="reg-password-confirm" class="form-label">Sahkan Kata Laluan <span class="text-mbas-danger">*</span></label>
+                  <input type="password" id="reg-password-confirm" class="form-input" placeholder="Ulangi kata laluan" required />
+                </div>
+              </div>
+
+              <button type="button" onclick="showStep(2)" class="btn-primary w-full justify-center py-2.5">
+                Seterusnya
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Step 2: OTP Verification -->
+          <div id="step-2" class="hidden">
+            <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Pengesahan OTP</h2>
+            <p class="mb-6 text-sm text-mbas-text-secondary">
+              Kod pengesahan telah dihantar ke nombor telefon dan emel anda. Sila masukkan kod 6 digit di bawah.
+            </p>
+
+            <div class="mb-6 flex justify-center gap-3">
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+              <input type="text" maxlength="1" class="form-input h-12 w-12 text-center text-lg font-bold" />
+            </div>
+
+            <p class="mb-6 text-center text-sm text-mbas-text-secondary">
+              Tidak menerima kod?
+              <a href="#" class="font-medium text-mbas-cyan hover:underline">Hantar semula</a>
+              <span class="text-xs">(59s)</span>
+            </p>
+
+            <div class="flex gap-3">
+              <button type="button" onclick="showStep(1)" class="btn-secondary flex-1 justify-center">
+                <i data-lucide="arrow-left" class="h-4 w-4"></i>
+                Kembali
+              </button>
+              <button type="button" onclick="showStep(3)" class="btn-primary flex-1 justify-center">
+                Sahkan
+                <i data-lucide="check" class="h-4 w-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: PDPA Consent -->
+          <div id="step-3" class="hidden">
+            <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+              Notis Privasi & PDPA
+            </h2>
+            <div class="mb-6 max-h-48 overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+              <p class="mb-3 font-semibold">Akta Perlindungan Data Peribadi 2010 (PDPA)</p>
+              <p class="mb-2">
+                Majlis Bandaraya Alor Setar (MBAS) menghormati privasi anda dan komited untuk melindungi data peribadi anda selaras dengan Akta Perlindungan Data Peribadi 2010 (Akta 709).
+              </p>
+              <p class="mb-2">
+                Data peribadi yang dikumpul termasuk nama, nombor kad pengenalan, alamat emel, nombor telefon dan alamat. Maklumat ini akan digunakan untuk tujuan pengurusan aduan awam sahaja.
+              </p>
+              <p class="mb-2">
+                Anda berhak untuk mengakses dan membetulkan data peribadi anda pada bila-bila masa. Sebarang pertanyaan berkaitan data peribadi boleh dikemukakan kepada Pegawai Perlindungan Data MBAS.
+              </p>
+              <p>
+                Dengan mendaftar, anda bersetuju membenarkan MBAS memproses data peribadi anda bagi tujuan yang dinyatakan di atas.
+              </p>
+            </div>
+
+            <label class="mb-6 flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+              <input type="checkbox" id="pdpa-consent" class="mt-0.5 h-4 w-4 rounded border-gray-300 text-mbas-cyan focus:ring-mbas-cyan" />
+              <span>
+                Saya telah membaca dan bersetuju dengan
+                <strong>Notis Privasi dan Akta Perlindungan Data Peribadi 2010 (PDPA)</strong>
+                Majlis Bandaraya Alor Setar.
+              </span>
+            </label>
+
+            <div class="flex gap-3">
+              <button type="button" onclick="showStep(2)" class="btn-secondary flex-1 justify-center">
+                <i data-lucide="arrow-left" class="h-4 w-4"></i>
+                Kembali
+              </button>
+              <button type="button" onclick="showSuccess()" class="btn-primary flex-1 justify-center">
+                <i data-lucide="user-plus" class="h-4 w-4"></i>
+                Daftar Akaun
+              </button>
+            </div>
+          </div>
+
+          <!-- Success Message -->
+          <div id="step-success" class="hidden text-center">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+              <i data-lucide="check-circle" class="h-8 w-8 text-green-600 dark:text-green-400"></i>
+            </div>
+            <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Pendaftaran Berjaya!</h2>
+            <p class="mb-6 text-sm text-mbas-text-secondary">
+              Akaun anda telah berjaya didaftarkan. Sila log masuk untuk menggunakan sistem.
+            </p>
+            <a href="/index.html" class="btn-primary justify-center">
+              <i data-lucide="log-in" class="h-4 w-4"></i>
+              Log Masuk Sekarang
+            </a>
+          </div>
+
+          <!-- Login Link -->
+          <p class="mt-6 text-center text-sm text-mbas-text-secondary">
+            Sudah mempunyai akaun?
+            <a href="/index.html" class="font-medium text-mbas-cyan hover:underline">Log masuk di sini</a>
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <p class="mt-6 text-center text-xs text-mbas-text-secondary">
+          &copy; 2026 Majlis Bandaraya Alor Setar. Hak cipta terpelihara.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons()
+
+      function showStep(step) {
+        document.getElementById('step-1').classList.add('hidden')
+        document.getElementById('step-2').classList.add('hidden')
+        document.getElementById('step-3').classList.add('hidden')
+        document.getElementById('step-success').classList.add('hidden')
+        document.getElementById('step-' + step).classList.remove('hidden')
+
+        // Update step indicators
+        for (let i = 1; i <= 3; i++) {
+          const indicator = document.getElementById('step-indicator-' + i)
+          const circle = indicator.querySelector('span:first-child')
+          const label = indicator.querySelector('span:last-child')
+          if (i <= step) {
+            circle.className = 'flex h-7 w-7 items-center justify-center rounded-full bg-mbas-cyan text-xs font-bold text-white'
+            label.className = 'text-xs font-medium text-mbas-cyan'
+          } else {
+            circle.className = 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-gray-500 dark:bg-gray-600 dark:text-gray-400'
+            label.className = 'text-xs text-mbas-text-secondary'
+          }
+        }
+
+        lucide.createIcons()
+      }
+
+      function showSuccess() {
+        document.getElementById('step-1').classList.add('hidden')
+        document.getElementById('step-2').classList.add('hidden')
+        document.getElementById('step-3').classList.add('hidden')
+        document.getElementById('step-success').classList.remove('hidden')
+        lucide.createIcons()
+      }
+    </script>
+  </body>
+</html>
