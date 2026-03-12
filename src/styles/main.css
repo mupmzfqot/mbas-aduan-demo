@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+@source "../../pages/**/*.html";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-mbas-navy: #2f4858;
+  --color-mbas-charcoal: #222222;
+  --color-mbas-cyan: #0693e3;
+  --color-mbas-button: #32373c;
+  --color-mbas-button-hover: #333333;
+  --color-mbas-danger: #cf2e2e;
+  --color-mbas-light-bg: #f1f1f1;
+  --color-mbas-dark-bg: #111117;
+  --color-mbas-text-primary: #6f6f6f;
+  --color-mbas-text-secondary: #8e8e8e;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-mbas-cyan px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-mbas-cyan focus:ring-offset-2 cursor-pointer;
+}
+
+@utility btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-mbas-button px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-mbas-button-hover focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 cursor-pointer;
+}
+
+@utility btn-danger {
+  @apply inline-flex items-center gap-2 rounded-lg bg-mbas-danger px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-mbas-danger focus:ring-offset-2 cursor-pointer;
+}
+
+@utility card {
+  @apply rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800;
+}
+
+@utility stat-card {
+  @apply rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 flex items-center gap-4;
+}
+
+@utility badge-baharu {
+  @apply inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+}
+
+@utility badge-diterima {
+  @apply inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300;
+}
+
+@utility badge-dalam-tindakan {
+  @apply inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-300;
+}
+
+@utility badge-selesai {
+  @apply inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300;
+}
+
+@utility badge-ditolak {
+  @apply inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300;
+}
+
+@utility form-label {
+  @apply mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+
+@utility form-input {
+  @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-mbas-cyan focus:outline-none focus:ring-1 focus:ring-mbas-cyan dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-mbas-cyan;
+}
+
+@utility sidebar {
+  @apply fixed left-0 top-0 z-40 h-screen w-64 bg-mbas-navy transition-transform dark:bg-mbas-charcoal;
+}
+
+@utility sidebar-link {
+  @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-300 transition-colors hover:bg-white/10 hover:text-white;
+}
+
+@utility sidebar-link-active {
+  @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white bg-white/15 transition-colors hover:bg-white/20;
+}
+
+@utility main-header {
+  @apply fixed left-0 top-0 z-30 flex h-16 w-full items-center justify-between border-b border-gray-200 bg-white px-4 dark:border-gray-700 dark:bg-gray-800 lg:left-64;
+}
+
+@utility main-content {
+  @apply mt-16 p-4 lg:ml-64 lg:p-6;
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700;
+}
+
+.data-table {
+  @apply w-full text-left text-sm;
+}
+
+.data-table thead {
+  @apply bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-300;
+}
+
+.data-table th {
+  @apply px-6 py-3;
+}
+
+.data-table td {
+  @apply px-6 py-4;
+}
+
+.data-table tbody tr {
+  @apply border-b border-gray-200 bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700;
+}
+
+/* Base styles */
+body {
+  @apply bg-white text-mbas-text-primary antialiased;
+}
+
+.dark body {
+  @apply bg-mbas-dark-bg text-gray-300;
+}
