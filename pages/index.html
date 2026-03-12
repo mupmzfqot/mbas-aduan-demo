@@ -22,13 +22,15 @@
       <div class="w-full max-w-md">
         <!-- Logo & Title -->
         <div class="mb-8 text-center">
-          <img src="/src/assets/logo/logo.png" alt="Logo MBAS" class="mx-auto mb-4 h-24 w-24 object-contain" />
+          <img
+            src="/src/assets/logo/logo.png"
+            alt="Logo MBAS"
+            class="mx-auto mb-4 h-24 w-24 object-contain"
+          />
           <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
             Sistem Pengurusan Aduan Awam
           </h1>
-          <p class="mt-1 text-sm text-mbas-text-secondary">
-            Majlis Bandaraya Alor Setar
-          </p>
+          <p class="mt-1 text-sm text-mbas-text-secondary">Majlis Bandaraya Alor Setar</p>
         </div>
 
         <!-- Login Card -->
@@ -73,10 +75,15 @@
             <!-- Remember + Forgot -->
             <div class="flex items-center justify-between">
               <label class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-mbas-cyan focus:ring-mbas-cyan" />
+                <input
+                  type="checkbox"
+                  class="h-4 w-4 rounded border-gray-300 text-mbas-cyan focus:ring-mbas-cyan"
+                />
                 Ingat saya
               </label>
-              <a href="#" class="text-sm font-medium text-mbas-cyan hover:underline">Lupa kata laluan?</a>
+              <a href="#" class="text-sm font-medium text-mbas-cyan hover:underline"
+                >Lupa kata laluan?</a
+              >
             </div>
 
             <!-- Login Button -->
@@ -98,23 +105,38 @@
             <p class="mb-3 text-center text-xs font-medium uppercase text-mbas-text-secondary">
               Akses Demo Pantas
             </p>
-            <a href="/awam/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <a
+              href="/awam/dashboard.html"
+              class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
               <i data-lucide="user" class="h-4 w-4 text-mbas-cyan"></i>
               Pengguna Awam
             </a>
-            <a href="/admin/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <a
+              href="/admin/dashboard.html"
+              class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
               <i data-lucide="shield" class="h-4 w-4 text-indigo-500"></i>
               Admin Aduan
             </a>
-            <a href="/penyelia/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <a
+              href="/penyelia/dashboard.html"
+              class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
               <i data-lucide="users" class="h-4 w-4 text-amber-500"></i>
               Penyelia Bahagian
             </a>
-            <a href="/teknikal/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <a
+              href="/teknikal/dashboard.html"
+              class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
               <i data-lucide="wrench" class="h-4 w-4 text-green-500"></i>
               Teknikal Bahagian
             </a>
-            <a href="/pentadbir/dashboard.html" class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+            <a
+              href="/pentadbir/dashboard.html"
+              class="flex w-full items-center gap-3 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
               <i data-lucide="settings" class="h-4 w-4 text-red-500"></i>
               Pentadbir Sistem
             </a>
@@ -123,7 +145,9 @@
           <!-- Register Link -->
           <p class="mt-6 text-center text-sm text-mbas-text-secondary">
             Belum mempunyai akaun?
-            <a href="/daftar.html" class="font-medium text-mbas-cyan hover:underline">Daftar sekarang</a>
+            <a href="/daftar.html" class="font-medium text-mbas-cyan hover:underline"
+              >Daftar sekarang</a
+            >
           </p>
         </div>
 
@@ -135,6 +159,8 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
-    <script>lucide.createIcons()</script>
+    <script>
+      lucide.createIcons()
+    </script>
   </body>
 </html>
