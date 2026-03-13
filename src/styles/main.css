@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @source "../../pages/**/*.html";
+@source "../partials/**/*.html";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -66,23 +67,30 @@
 }
 
 @utility sidebar {
-  @apply fixed left-0 top-0 z-40 h-screen w-64 bg-mbas-navy transition-transform dark:bg-mbas-charcoal;
+  @apply fixed left-0 top-0 z-40 h-screen w-64 bg-mbas-navy dark:bg-mbas-charcoal;
+  transition: transform 0.3s ease;
+}
+
+@utility sidebar-group-label {
+  @apply flex w-full items-center justify-between px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 cursor-pointer hover:text-gray-300 transition-colors;
 }
 
 @utility sidebar-link {
-  @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-300 transition-colors hover:bg-white/10 hover:text-white;
+  @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-300 transition-colors hover:bg-white/10 hover:text-white;
 }
 
 @utility sidebar-link-active {
-  @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white bg-white/15 transition-colors hover:bg-white/20;
+  @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white bg-mbas-cyan/20 text-mbas-cyan transition-colors hover:bg-mbas-cyan/25;
 }
 
 @utility main-header {
-  @apply fixed left-0 top-0 z-30 flex h-16 w-full items-center justify-between border-b border-gray-200 bg-white px-4 dark:border-gray-700 dark:bg-gray-800 lg:left-64;
+  @apply fixed left-0 right-0 top-0 z-30 flex h-16 items-center justify-between border-b border-gray-200 bg-white px-4 dark:border-gray-700 dark:bg-gray-800;
+  transition: left 0.3s ease;
 }
 
 @utility main-content {
-  @apply mt-16 p-4 lg:ml-64 lg:p-6;
+  @apply mt-16 p-4 lg:p-6;
+  transition: margin-left 0.3s ease;
 }
 
 /* Table styles */

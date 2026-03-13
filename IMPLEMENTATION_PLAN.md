@@ -41,6 +41,7 @@ mbas-aduan-demo/
 │   │   └── sidebar-awam.html
 │   ├── styles/
 │   │   └── main.css
+│   ├── daftar.ts
 │   ├── layout.ts
 │   └── main.ts
 ├── pages/
@@ -76,34 +77,33 @@ mbas-aduan-demo/
 ├── package.json
 ├── vite.config.ts
 ├── tsconfig.json
-├── tailwind.config.ts
-├── postcss.config.js
 ├── eslint.config.js
 ├── .htmlhintrc
 ├── .prettierrc
 ├── .gitignore
 ├── SPECIFICATION.md
-├── README.md
 ├── CLAUDE.md
 └── IMPLEMENTATION_PLAN.md
 ```
 
 ---
 
-## 3. Vite Setup
+## 3. Vite Setup ✅
 
-- Vite 6.x with `root` set to project root
+- Vite 7.x with `root: '.'` (project root)
 - Multi-page build: glob all `pages/**/*.html` as rollup inputs
-- `base` set to `'/'` for local dev, configurable to `'/<repo-name>/'` for GitHub Pages
+- `base` always `'/'` (custom domain `e-aduan.borang.my`)
+- Custom `pagesRewrite()` plugin: dev server rewrites `/` → `pages/index.html`
+- Custom `flattenPagesOutput()` plugin: moves `dist/pages/*` → `dist/*` after build
 - Dev server configured so `pages/index.html` loads at `http://localhost:5173/`
 
 ---
 
-## 4. TailwindCSS Configuration
+## 4. TailwindCSS Configuration ✅
 
-- TailwindCSS v4 (latest) with PostCSS + Autoprefixer
-- `darkMode: 'class'`
-- Content paths: `pages/**/*.html`, `src/**/*.{ts,js}`
+- TailwindCSS v4 with `@tailwindcss/vite` plugin (no PostCSS/Autoprefixer config files)
+- Config in `src/styles/main.css` using `@theme`, `@utility`, `@custom-variant`, `@source`
+- No `tailwind.config.ts` or `postcss.config.js`
 - Custom colors matching **pbt.kedah.gov.my/majlis-bandaraya-alor-setar**:
   - Primary: Dark Navy `#2f4858` — header, sidebar background
   - Secondary: Dark Charcoal `#222222` — navigation, menus
@@ -117,7 +117,7 @@ mbas-aduan-demo/
 
 ---
 
-## 5. ESLint Setup
+## 5. ESLint Setup ✅
 
 - `typescript-eslint` with recommended config
 - `eslint-config-prettier` to avoid conflicts
@@ -125,7 +125,7 @@ mbas-aduan-demo/
 
 ---
 
-## 6. HTML Linting Setup
+## 6. HTML Linting Setup ✅
 
 - HTMLHint with `.htmlhintrc`
 - Rules: lowercase tags/attrs, double quotes, doctype-first, tag-pair, id-unique, title-require
@@ -133,9 +133,9 @@ mbas-aduan-demo/
 
 ---
 
-## 7. Light Mode and Dark Mode Strategy
+## 7. Light Mode and Dark Mode Strategy ✅
 
-- Tailwind `class` strategy on `<html>` element
+- Tailwind `@custom-variant dark` on `<html>` element
 - Toggle button in header (sun/moon icon)
 - Preference persisted to `localStorage`
 - On load, restore saved preference or default to light mode
@@ -244,40 +244,29 @@ Key UI patterns:
 
 ---
 
-## 11. Asset Management
+## 11. Asset Management ✅
 
-- Logo: placeholder SVG in `src/assets/logo/` (MBAS crest placeholder)
-- Icons: Lucide via CDN (`unpkg.com/lucide@latest`)
+- Logo: MBAS official crest in `src/assets/logo/logo.png`
+- Icons: `lucide` npm package (NOT CDN), initialized in `src/main.ts`
 - Styles: `src/styles/main.css` with Tailwind directives + custom component classes
 - No images needed — use colored placeholder divs for before/after photos
 
 ---
 
-## 12. GitHub Pages Deployment Strategy
+## 12. GitHub Pages Deployment Strategy ✅
 
-- Install `gh-pages` as dev dependency
+- `gh-pages` dev dependency installed
 - `npm run deploy` = `npm run build && gh-pages -d dist`
-- Set `base` in `vite.config.ts` to `'/<repo-name>/'` before deploying
+- `base` always `'/'` (custom domain `e-aduan.borang.my`)
 - GitHub repo Settings > Pages > source branch = `gh-pages`
 
 ---
 
 ## 13. Documentation Plan
 
-### README.md
+### README.md — pending
 
-- Project overview (Malay + English)
-- Tech stack
-- Installation, dev, build, lint, format, deploy commands
-- Page structure explanation
-- How to add new pages
-
-### CLAUDE.md
-
-- Project purpose, tech stack, key commands
-- Directory conventions
-- Layout system, dark mode, responsive approach
-- How to add a new page step-by-step
+### CLAUDE.md ✅
 
 ---
 
@@ -295,7 +284,7 @@ Examples:
 
 ---
 
-## 15. Prettier / Code Formatting Setup
+## 15. Prettier / Code Formatting Setup ✅
 
 ```json
 {
@@ -338,33 +327,33 @@ Examples:
 
 ## 18. Initial Prototype Page List
 
-Total: **21 pages**
+Total: **23 pages** (2 done, 21 pending)
 
-| # | File | Description |
-|---|------|-------------|
-| 1 | `pages/index.html` | Login (email/phone + kata laluan) |
-| 2 | `pages/daftar.html` | Pendaftaran + OTP + PDPA |
-| 3 | `pages/awam/dashboard.html` | Paparan utama pengguna awam |
-| 4 | `pages/awam/aduan-baharu.html` | Borang aduan baharu + GPS + muat naik |
-| 5 | `pages/awam/senarai-aduan.html` | Senarai aduan saya |
-| 6 | `pages/awam/aduan-detail.html` | Butiran aduan + timeline status |
-| 7 | `pages/awam/maklum-balas.html` | Penilaian bintang + komen |
-| 8 | `pages/admin/dashboard.html` | Dashboard statistik + carta |
-| 9 | `pages/admin/senarai-aduan.html` | Senarai semua aduan masuk |
-| 10 | `pages/admin/aduan-detail.html` | Butiran + tugasan ke bahagian |
-| 11 | `pages/admin/notifikasi.html` | Pusat notifikasi |
-| 12 | `pages/penyelia/dashboard.html` | Dashboard penyelia bahagian |
-| 13 | `pages/penyelia/senarai-aduan.html` | Aduan bahagian |
-| 14 | `pages/penyelia/aduan-detail.html` | Tugasan ke pegawai teknikal |
-| 15 | `pages/teknikal/dashboard.html` | Dashboard pegawai teknikal |
-| 16 | `pages/teknikal/senarai-aduan.html` | Aduan yang ditugaskan |
-| 17 | `pages/teknikal/aduan-detail.html` | Penyelesaian + foto sebelum/selepas |
-| 18 | `pages/pentadbir/dashboard.html` | Dashboard analitik sistem |
-| 19 | `pages/pentadbir/pengguna.html` | Pengurusan pengguna & peranan |
-| 20 | `pages/pentadbir/tetapan.html` | Tetapan sistem |
-| 21 | `pages/pentadbir/laporan.html` | Laporan + eksport Excel/PDF |
-| 22 | `pages/pentadbir/peta-aduan.html` | Peta taburan aduan |
-| 23 | `pages/pentadbir/log-audit.html` | Log audit & jejak perubahan |
+| # | File | Status | Description |
+|---|------|--------|-------------|
+| 1 | `pages/index.html` | ✅ | Login (email/phone + kata laluan) |
+| 2 | `pages/daftar.html` | ✅ | Pendaftaran + OTP + PDPA |
+| 3 | `pages/awam/dashboard.html` | | Paparan utama pengguna awam |
+| 4 | `pages/awam/aduan-baharu.html` | | Borang aduan baharu + GPS + muat naik |
+| 5 | `pages/awam/senarai-aduan.html` | | Senarai aduan saya |
+| 6 | `pages/awam/aduan-detail.html` | | Butiran aduan + timeline status |
+| 7 | `pages/awam/maklum-balas.html` | | Penilaian bintang + komen |
+| 8 | `pages/admin/dashboard.html` | | Dashboard statistik + carta |
+| 9 | `pages/admin/senarai-aduan.html` | | Senarai semua aduan masuk |
+| 10 | `pages/admin/aduan-detail.html` | | Butiran + tugasan ke bahagian |
+| 11 | `pages/admin/notifikasi.html` | | Pusat notifikasi |
+| 12 | `pages/penyelia/dashboard.html` | | Dashboard penyelia bahagian |
+| 13 | `pages/penyelia/senarai-aduan.html` | | Aduan bahagian |
+| 14 | `pages/penyelia/aduan-detail.html` | | Tugasan ke pegawai teknikal |
+| 15 | `pages/teknikal/dashboard.html` | | Dashboard pegawai teknikal |
+| 16 | `pages/teknikal/senarai-aduan.html` | | Aduan yang ditugaskan |
+| 17 | `pages/teknikal/aduan-detail.html` | | Penyelesaian + foto sebelum/selepas |
+| 18 | `pages/pentadbir/dashboard.html` | | Dashboard analitik sistem |
+| 19 | `pages/pentadbir/pengguna.html` | | Pengurusan pengguna & peranan |
+| 20 | `pages/pentadbir/tetapan.html` | | Tetapan sistem |
+| 21 | `pages/pentadbir/laporan.html` | | Laporan + eksport Excel/PDF |
+| 22 | `pages/pentadbir/peta-aduan.html` | | Peta taburan aduan |
+| 23 | `pages/pentadbir/log-audit.html` | | Log audit & jejak perubahan |
 
 ---
 

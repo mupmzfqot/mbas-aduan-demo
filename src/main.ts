@@ -1,4 +1,5 @@
 import './styles/main.css'
+import { createIcons, icons } from 'lucide'
 
 // Dark mode toggle
 function initDarkMode() {
@@ -37,6 +38,7 @@ function initSidebar() {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+  createIcons({ icons })
   initDarkMode()
   initSidebar()
 })

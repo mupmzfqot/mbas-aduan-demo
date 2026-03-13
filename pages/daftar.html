@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pendaftaran — Sistem Pengurusan Aduan Awam MBAS</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   </head>
   <body class="min-h-screen bg-mbas-light-bg dark:bg-mbas-dark-bg">
     <!-- Dark mode toggle -->
@@ -346,42 +345,6 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
-    <script>
-      lucide.createIcons()
-
-      function showStep(step) {
-        document.getElementById('step-1').classList.add('hidden')
-        document.getElementById('step-2').classList.add('hidden')
-        document.getElementById('step-3').classList.add('hidden')
-        document.getElementById('step-success').classList.add('hidden')
-        document.getElementById('step-' + step).classList.remove('hidden')
-
-        // Update step indicators
-        for (let i = 1; i <= 3; i++) {
-          const indicator = document.getElementById('step-indicator-' + i)
-          const circle = indicator.querySelector('span:first-child')
-          const label = indicator.querySelector('span:last-child')
-          if (i <= step) {
-            circle.className =
-              'flex h-7 w-7 items-center justify-center rounded-full bg-mbas-cyan text-xs font-bold text-white'
-            label.className = 'text-xs font-medium text-mbas-cyan'
-          } else {
-            circle.className =
-              'flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-gray-500 dark:bg-gray-600 dark:text-gray-400'
-            label.className = 'text-xs text-mbas-text-secondary'
-          }
-        }
-
-        lucide.createIcons()
-      }
-
-      function showSuccess() {
-        document.getElementById('step-1').classList.add('hidden')
-        document.getElementById('step-2').classList.add('hidden')
-        document.getElementById('step-3').classList.add('hidden')
-        document.getElementById('step-success').classList.remove('hidden')
-        lucide.createIcons()
-      }
-    </script>
+    <script type="module" src="/src/daftar.ts"></script>
   </body>
 </html>
