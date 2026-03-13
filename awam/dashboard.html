@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Pengguna Awam — e-Aduan MBAS</title>
+    <script type="module" crossorigin src="/assets/awam/dashboard-DOzf8ijp.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/lucide-B2VElhxj.js">
+    <link rel="stylesheet" crossorigin href="/assets/lucide-DkWTvPiR.css">
+  </head>
+  <body class="bg-mbas-light-bg dark:bg-mbas-dark-bg">
+    <!-- Layout includes -->
+    <div data-include="sidebar-awam" data-active="dashboard"></div>
+    <div
+      data-include="header"
+      data-title="Dashboard"
+      data-breadcrumb="Pengguna Awam / Dashboard"
+    ></div>
+    <div id="sidebar-overlay" class="fixed inset-0 z-30 hidden bg-black/50 lg:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Filament-style Stat Widgets -->
+      <div class="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <!-- Jumlah Aduan -->
+        <div
+          class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Jumlah Aduan</p>
+              <p class="mt-1 text-3xl font-bold text-gray-900 dark:text-white">12</p>
+              <p class="mt-1 flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
+                <i data-lucide="trending-up" class="h-4 w-4"></i>
+                +2 bulan ini
+              </p>
+            </div>
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl bg-mbas-cyan/10 dark:bg-mbas-cyan/20"
+            >
+              <i data-lucide="file-text" class="h-6 w-6 text-mbas-cyan"></i>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 h-1 w-full bg-mbas-cyan"></div>
+        </div>
+
+        <!-- Dalam Tindakan -->
+        <div
+          class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Dalam Tindakan</p>
+              <p class="mt-1 text-3xl font-bold text-gray-900 dark:text-white">3</p>
+              <p class="mt-1 text-sm text-amber-600 dark:text-amber-400">Sedang diproses</p>
+            </div>
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 dark:bg-amber-500/20"
+            >
+              <i data-lucide="clock" class="h-6 w-6 text-amber-500"></i>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 h-1 w-full bg-amber-500"></div>
+        </div>
+
+        <!-- Selesai -->
+        <div
+          class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Selesai</p>
+              <p class="mt-1 text-3xl font-bold text-gray-900 dark:text-white">8</p>
+              <p class="mt-1 text-sm text-green-600 dark:text-green-400">66.7% kadar selesai</p>
+            </div>
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 dark:bg-green-500/20"
+            >
+              <i data-lucide="check-circle" class="h-6 w-6 text-green-500"></i>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 h-1 w-full bg-green-500"></div>
+        </div>
+
+        <!-- Ditolak -->
+        <div
+          class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Ditolak</p>
+              <p class="mt-1 text-3xl font-bold text-gray-900 dark:text-white">1</p>
+              <p class="mt-1 text-sm text-red-600 dark:text-red-400">8.3% kadar tolak</p>
+            </div>
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/10 dark:bg-red-500/20"
+            >
+              <i data-lucide="x-circle" class="h-6 w-6 text-red-500"></i>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 h-1 w-full bg-red-500"></div>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="mb-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <!-- Chart Placeholder (2/3 width) -->
+        <div
+          class="rounded-xl border border-gray-200 bg-white p-6 xl:col-span-2 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h2 class="text-base font-semibold text-gray-900 dark:text-white">
+                Statistik Aduan Bulanan
+              </h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400">6 bulan terakhir</p>
+            </div>
+            <select
+              class="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"
+            >
+              <option>2026</option>
+              <option>2025</option>
+            </select>
+          </div>
+          <!-- Chart placeholder bars -->
+          <div
+            class="flex h-100 items-end gap-3 border-b border-gray-200 px-2 pb-6 dark:border-gray-700"
+          >
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan/80" style="height: 77px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400"
+                >Okt</span
+              >
+            </div>
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan/80" style="height: 115px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400"
+                >Nov</span
+              >
+            </div>
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan/80" style="height: 67px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400"
+                >Dis</span
+              >
+            </div>
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan/80" style="height: 144px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400"
+                >Jan</span
+              >
+            </div>
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan/80" style="height: 96px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400"
+                >Feb</span
+              >
+            </div>
+            <div class="relative flex-1">
+              <div class="w-full rounded-t bg-mbas-cyan" style="height: 163px"></div>
+              <span
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs font-medium text-mbas-cyan"
+                >Mac</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions + Status Summary (1/3 width) -->
+        <div class="space-y-6">
+          <!-- Quick Actions -->
+          <div
+            class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h2 class="mb-4 text-base font-semibold text-gray-900 dark:text-white">
+              Tindakan Pantas
+            </h2>
+            <div class="space-y-3">
+              <a
+                href="/awam/aduan-baharu.html"
+                class="flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-mbas-cyan hover:bg-mbas-cyan/5 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:border-mbas-cyan"
+              >
+                <div
+                  class="flex h-8 w-8 items-center justify-center rounded-lg bg-mbas-cyan/10 dark:bg-mbas-cyan/20"
+                >
+                  <i data-lucide="plus" class="h-4 w-4 text-mbas-cyan"></i>
+                </div>
+                Hantar Aduan Baharu
+              </a>
+              <a
+                href="/awam/senarai-aduan.html"
+                class="flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-mbas-cyan hover:bg-mbas-cyan/5 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:border-mbas-cyan"
+              >
+                <div
+                  class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20"
+                >
+                  <i data-lucide="search" class="h-4 w-4 text-indigo-500"></i>
+                </div>
+                Semak Status Aduan
+              </a>
+            </div>
+          </div>
+
+          <!-- Status Breakdown -->
+          <div
+            class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h2 class="mb-4 text-base font-semibold text-gray-900 dark:text-white">
+              Pecahan Status
+            </h2>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-blue-500"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">Baharu</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">0</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-indigo-500"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">Diterima</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">0</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-amber-500"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">Dalam Tindakan</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">3</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">Selesai</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">8</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">Ditolak</span>
+                </div>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Complaints Table -->
+      <div class="rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+        <div
+          class="flex items-center justify-between border-b border-gray-200 px-6 py-4 dark:border-gray-700"
+        >
+          <h2 class="text-base font-semibold text-gray-900 dark:text-white">Aduan Terkini</h2>
+          <a
+            href="/awam/senarai-aduan.html"
+            class="text-sm font-medium text-mbas-cyan hover:underline"
+            >Lihat semua</a
+          >
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>No. Rujukan</th>
+                <th>Tajuk</th>
+                <th>Kategori</th>
+                <th>Tarikh</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium text-mbas-cyan">ADU-2026-0012</td>
+                <td>Jalan berlubang di Taman Aman</td>
+                <td>
+                  <span class="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    Jalan Rosak
+                  </span>
+                </td>
+                <td class="text-gray-500 dark:text-gray-400">10 Mac 2026</td>
+                <td><span class="badge-dalam-tindakan">Dalam Tindakan</span></td>
+                <td>
+                  <a href="/awam/aduan-detail.html" class="text-sm text-mbas-cyan hover:underline"
+                    >Lihat</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="font-medium text-mbas-cyan">ADU-2026-0011</td>
+                <td>Sampah tidak dikutip di Lorong 5</td>
+                <td>
+                  <span class="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    Sampah
+                  </span>
+                </td>
+                <td class="text-gray-500 dark:text-gray-400">8 Mac 2026</td>
+                <td><span class="badge-selesai">Selesai</span></td>
+                <td>
+                  <a href="/awam/aduan-detail.html" class="text-sm text-mbas-cyan hover:underline"
+                    >Lihat</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="font-medium text-mbas-cyan">ADU-2026-0010</td>
+                <td>Longkang tersumbat Jalan Sultan Badlishah</td>
+                <td>
+                  <span class="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    Longkang
+                  </span>
+                </td>
+                <td class="text-gray-500 dark:text-gray-400">5 Mac 2026</td>
+                <td><span class="badge-baharu">Baharu</span></td>
+                <td>
+                  <a href="/awam/aduan-detail.html" class="text-sm text-mbas-cyan hover:underline"
+                    >Lihat</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="font-medium text-mbas-cyan">ADU-2026-0009</td>
+                <td>Lampu jalan rosak berhampiran Pekan Rabu</td>
+                <td>
+                  <span class="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    Lampu Jalan
+                  </span>
+                </td>
+                <td class="text-gray-500 dark:text-gray-400">1 Mac 2026</td>
+                <td><span class="badge-selesai">Selesai</span></td>
+                <td>
+                  <a href="/awam/aduan-detail.html" class="text-sm text-mbas-cyan hover:underline"
+                    >Lihat</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="font-medium text-mbas-cyan">ADU-2026-0008</td>
+                <td>Vandalisme papan tanda di Taman Sejahtera</td>
+                <td>
+                  <span class="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    Vandalisme
+                  </span>
+                </td>
+                <td class="text-gray-500 dark:text-gray-400">25 Feb 2026</td>
+                <td><span class="badge-ditolak">Ditolak</span></td>
+                <td>
+                  <a href="/awam/aduan-detail.html" class="text-sm text-mbas-cyan hover:underline"
+                    >Lihat</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>
