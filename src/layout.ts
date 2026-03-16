@@ -4,7 +4,7 @@ async function loadPartial(el: Element): Promise<void> {
   const name = el.getAttribute('data-include')
   if (!name) return
 
-  const res = await fetch(`/src/partials/${name}.html`)
+  const res = await fetch(`/partials/${name}.html`)
   const html = await res.text()
   el.outerHTML = html
 }
@@ -40,7 +40,7 @@ function setSidebarOpen(
   sidebar: HTMLElement,
   header: HTMLElement | null,
   content: HTMLElement | null,
-  open: boolean,
+  open: boolean
 ): void {
   if (open) {
     sidebar.style.transform = 'translateX(0)'
