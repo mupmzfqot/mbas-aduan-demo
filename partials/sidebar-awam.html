@@ -1,0 +1,88 @@
+<aside id="sidebar" class="sidebar -translate-x-full lg:translate-x-0">
+  <div class="flex h-full flex-col">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 px-6 py-5">
+      <img src="/src/assets/logo/logo.png" alt="Logo MBAS" class="h-9 w-9 object-contain" />
+      <div class="leading-tight">
+        <p class="text-base font-bold tracking-tight text-white">e-Aduan MBAS</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-6 overflow-y-auto px-3 py-2">
+      <!-- Group: Menu Utama -->
+      <div>
+        <button
+          type="button"
+          class="sidebar-group-label"
+          onclick="
+            this.closest('div').querySelector('ul').classList.toggle('hidden')
+            this.querySelector('[data-lucide=chevron-down]')?.classList.toggle('rotate-180')
+          "
+        >
+          <span>Menu Utama</span>
+          <i data-lucide="chevron-down" class="h-4 w-4 transition-transform duration-200"></i>
+        </button>
+        <ul class="mt-1 space-y-1">
+          <li>
+            <a href="/awam/dashboard.html" data-nav="dashboard" class="sidebar-link">
+              <i data-lucide="layout-dashboard" class="h-5 w-5 shrink-0"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/awam/aduan-baharu.html" data-nav="aduan-baharu" class="sidebar-link">
+              <i data-lucide="plus-circle" class="h-5 w-5 shrink-0"></i>
+              <span>Aduan Baharu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/awam/senarai-aduan.html" data-nav="senarai-aduan" class="sidebar-link">
+              <i data-lucide="list" class="h-5 w-5 shrink-0"></i>
+              <span>Senarai Aduan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Group: Lain-lain -->
+      <div>
+        <button
+          type="button"
+          class="sidebar-group-label"
+          onclick="
+            this.closest('div').querySelector('ul').classList.toggle('hidden')
+            this.querySelector('[data-lucide=chevron-down]')?.classList.toggle('rotate-180')
+          "
+        >
+          <span>Lain-lain</span>
+          <i data-lucide="chevron-down" class="h-4 w-4 transition-transform duration-200"></i>
+        </button>
+        <ul class="mt-1 space-y-1">
+          <li>
+            <a href="/awam/maklum-balas.html" data-nav="maklum-balas" class="sidebar-link">
+              <i data-lucide="star" class="h-5 w-5 shrink-0"></i>
+              <span>Maklum Balas</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- User section (bottom) -->
+    <div class="border-t border-white/10 px-3 py-3">
+      <a href="/index.html" class="sidebar-link">
+        <div
+          class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mbas-cyan text-xs font-bold text-white"
+        >
+          A
+        </div>
+        <div class="flex-1 truncate">
+          <p class="truncate text-sm font-medium text-white">Ahmad bin Ali</p>
+          <p class="truncate text-xs text-gray-400">Log Keluar</p>
+        </div>
+        <i data-lucide="log-out" class="h-4 w-4 shrink-0 text-gray-400"></i>
+      </a>
+    </div>
+  </div>
+</aside>

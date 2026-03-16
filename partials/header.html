@@ -1,0 +1,50 @@
+<header class="main-header">
+  <!-- Hamburger -->
+  <div class="flex items-center gap-3">
+    <button
+      id="sidebar-toggle"
+      class="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+    >
+      <i data-lucide="menu" class="h-5 w-5"></i>
+    </button>
+    <div>
+      <h1 id="header-title" class="text-lg font-semibold text-gray-900 dark:text-white"></h1>
+      <p id="header-breadcrumb" class="text-xs text-mbas-text-secondary"></p>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="flex items-center gap-2">
+    <!-- Notification -->
+    <button
+      class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+    >
+      <i data-lucide="bell" class="h-5 w-5"></i>
+      <span
+        class="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-mbas-danger text-[10px] font-bold text-white"
+        >3</span
+      >
+    </button>
+
+    <!-- Dark mode -->
+    <button
+      id="dark-mode-toggle"
+      class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+    >
+      <i data-lucide="sun" class="hidden h-5 w-5 text-yellow-500 dark:block"></i>
+      <i data-lucide="moon" class="block h-5 w-5 dark:hidden"></i>
+    </button>
+
+    <!-- User avatar -->
+    <div class="flex items-center gap-2 rounded-lg px-2 py-1">
+      <div
+        class="flex h-8 w-8 items-center justify-center rounded-full bg-mbas-cyan text-sm font-bold text-white"
+      >
+        A
+      </div>
+      <span class="hidden text-sm font-medium text-gray-700 sm:block dark:text-gray-300"
+        >Ahmad</span
+      >
+    </div>
+  </div>
+</header>
